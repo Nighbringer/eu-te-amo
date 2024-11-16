@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('imagens/cinnamoroll.gif'); /* Caminho do gif do Cinnamoroll */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    animation: fadeIn 1s ease-in-out;
+    color: yellow;
+    text-shadow: 2px 2px 5px black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.full-screen-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ff69b4;
+    transform: translateY(100vh) scale(0.8);
+    opacity: 0;
+    clip-path: polygon(50% 0%, 61% 18%, 80% 25%, 100% 40%, 91% 64%, 73% 84%, 50% 100%, 27% 84%, 9% 64%, 0% 40%, 20% 25%, 39% 18%);
+    animation: floatUp 3s ease-out infinite;
+}
